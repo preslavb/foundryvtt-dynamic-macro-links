@@ -1,20 +1,19 @@
 {
-    "name": "dynamic-macro-links",
-    "title": "Dynamic Macro Links",
-    "description": "Enable Dynamic Entity Links that use arbitrary macros",
-    "author": "hitcherland",
-    "version": "0.1.2",
-    "minimumCoreVersion": "0.7.8",
-    "compatibleCoreVersion": "0.7.8",
+    "name": "improved-dynamic-macro-links",
+    "title": "Improved Dynamic Macro Links",
+    "description": "Improve upon the module Dynamic Macro Links",
+    "author": "preslavb",
+    "version": "0.1.0",
+    "minimumCoreVersion": "0.8.9",
+    "compatibleCoreVersion": "0.8.9",
     "esmodules": [
         "scripts/main.mjs",
-        "scripts/dml.mjs",
-        "scripts/settings.mjs"
+        "scripts/dml.mjs"
     ],
-    "url": "https://github.com/hitcherland/foundryvtt-dynamic-macro-links",
-    "manifest": "https://raw.githubusercontent.com/hitcherland/foundryvtt-dynamic-macro-links/main/module.json",
-    "download": "https://github.com/hitcherland/foundryvtt-dynamic-macro-links/archive/v0.1.2.zip",
-    "readme": "https://raw.githubusercontent.com/hitcherland/foundryvtt-dynamic-macro-links/main/README.md",
+    "url": "https://github.com/preslavb/foundryvtt-dynamic-macro-links",
+    "manifest": "https://raw.githubusercontent.com/preslavb/foundryvtt-dynamic-macro-links/main/module.json",
+    "download": "https://github.com/preslavb/foundryvtt-dynamic-macro-links/archive/refs/tags/v0.1.0.zip",
+    "readme": "https://raw.githubusercontent.com/preslavb/foundryvtt-dynamic-macro-links/main/README.md",
     "packs": [{
         "name": "dml-macros",
         "label": "DML Macros",

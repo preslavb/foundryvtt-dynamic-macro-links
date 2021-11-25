@@ -45,22 +45,6 @@ class DynamicMacroLink extends Entity {
         }
     }
 
-    static updateDML(data) {
-        DynamicMacroLink.collection.forEach(function(d) {
-            DynamicMacroLink.collection.delete(d.entity);
-        });
-
-        DynamicMacroLink.collection.clear();
-
-        data.forEach(function({entity, macroId}) {
-            const dml = new DynamicMacroLink({
-                entity,
-                macroId,
-            });
-            DynamicMacroLink.collection.set(entity, dml);
-        });
-    }
-
     _activate() {
         $('body').on(
             'click',
@@ -69,7 +53,7 @@ class DynamicMacroLink extends Entity {
                 ev.preventDefault();
                 ev.stopPropagation();        
                 const target = ev.currentTarget;
-                const args = target.dataset.id.split(';');
+                const args = target.dataset.id.split(',');
                 this.execute(args);
                 return false;
             }.bind(this)
@@ -167,9 +151,25 @@ let _ready = false;
 
 function onReady() {
     _ready = true;
-    DynamicMacroLink.collection.forEach((dml) => {
-        dml._activate();
-    });
+
+    // Subscribe to macro hooks
+    Hooks.on("createMacro", bindMacroLinkType);
+    Hooks.on("deleteMacro", unbindMacroLinkType);
+}
+
+function bindMacroLinkType(macro, options, user_id) {
+    const {name, _id} = macro.data;
+
+    DynamicMacroLink.collection.set(name, new DynamicMacroLink({
+        name,
+        _id
+    }));
+}
+
+function unbindMacroLinkType(macro, options, user_id) {
+    const { name } = macro.data;
+
+    DynamicMacroLink.collection.delete(name);
 }
 
 export default DynamicMacroLink;
