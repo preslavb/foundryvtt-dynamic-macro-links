@@ -1,4 +1,7 @@
-# Dynamic Macro Links
+# Disclaimer and Attribution
+This module was initially created by [hitcherland](https://github.com/hitcherland) but since it hasn't been updated in a while, I've taken it upon myself to reenvigorate the module.
+
+# Improved Dynamic Macro Links
 
 This is a module for Foundry Virtual Tabletop, that allows users to add Dynamic Entity Links that call a macro.
 This is going to be mostly useful for journal entries that need a bit more interactivity, for example GM Notes that change the scene or start a playlist.
@@ -7,7 +10,7 @@ This module is inspired by Foundry VTT's own Dynamic Entity Links and [Forien's 
 
 # Installation
 
-Open Foundry VTT, and enter the module management tab. Import a new module with the tab `https://raw.githubusercontent.com/hitcherland/foundryvtt-macro-to-del/main/module.json`, and enable it in the game.
+Open Foundry VTT, and enter the module management tab. Import a new module with the tab `https://raw.githubusercontent.com/preslavb/foundryvtt-dynamic-macro-links/main/module.json`, and enable it in the game.
 
 # Usage
 
